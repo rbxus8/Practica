@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header con Botón Hamburguesa</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+      }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        width: 150px;
+        border-radius: 5px;
+      }
+
+      .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+      }
+
+      .menu a:hover {
+        background-color: #555;
+      }
+
+      .hamburger {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked ~ .menu {
+        display: flex;
+      }
+
+      @media (min-width: 768px) {
+        .menu {
+          display: flex;
+          position: static;
+          flex-direction: row;
+          background-color: transparent;
+          width: auto;
+          border-radius: 0;
+        }
+
+        .menu a {
+          border: none;
+          padding: 0 10px;
+        }
+
+        .hamburger {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Mi Sitio</div>
+      <nav>
+        <label for="toggle" class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </label>
+        <input type="checkbox" id="toggle" />
+        <div class="menu" id="menu">
+          <a href="#home">Inicio</a>
+          <a href="#about">Acerca</a>
+          <a href="#services">Servicios</a>
+          <a href="#contact">Contacto</a>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
