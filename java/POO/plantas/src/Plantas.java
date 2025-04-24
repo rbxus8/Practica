@@ -44,6 +44,16 @@ Ejercicio Nº 1
 
 public class Plantas {
    public static void main(String[] args) throws Exception {
-      System.out.println("Hello, World!");
+
+      // crear un objeto de la clase Planta
+      Arbusto arbustito = new Arbusto("Arbusto", 1.0, true, "Tropical", 0.5, true, "Hibisco", "Verde", true);
+      // crear un objeto de la clase Flor
+      Flor flor = new Flor("Rosa", 1.5, true, "Tropical", "Rojo", 5, "Amarillo", "Hibisco", "Primavera");
+      // crear un objeto de la clase Arbol
+      Arbol arbol = new Arbol("Pino", 10, true, "Frio", "Pino", "Cilindrico", 0.5, "Verde", "Aguja");
+
+      arbustito.decirLoQueSoy();
+      flor.decirLoQueSoy();
+      arbol.decirLoQueSoy();
    }
 }
