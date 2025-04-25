@@ -49,6 +49,6 @@ public abstract class Planta {
         this.climaIdeal = climaIdeal;
     }
 
-    public abstract void decirLoQueSoy();
+    protected abstract void decirLoQueSoy();
 
 }
