@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador de Visitas</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      header {
+        background-color: #b41010;
+        color: white;
+        padding: 10px 0;
+        display: flex;
+        justify-content: left;
+        padding: 1em;
+      }
+      header img {
+        height: 50px;
+      }
+      main {
+        padding: 20px;
+      }
+      footer {
+        background-color: #b41010;
+        color: white;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="img/image-removebg-preview.png" alt="Logo" />
+    </header>
+    <main>
+      <img
+        src="img/razer-axon.png"
+        alt="Imagen de Portada"
+        style="width: 100%"
+      />
+      <h1>Bienvenido a mi página</h1>
+      <p>Visitas: <span id="visit-counter">0</span></p>
+    </main>
+    <footer>Derechos reservados a mí, Julian.</footer>
+    <script>
+      // Contador de visitas
+      const visitCounter = document.getElementById("visit-counter");
+      let visits = localStorage.getItem("visits") || 0;
+      visits++;
+      localStorage.setItem("visits", visits);
+      visitCounter.textContent = visits;
+    </script>
+  </body>
+</html>
