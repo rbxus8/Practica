@@ -33,6 +33,7 @@ Asegurar que el programa no falle si el usuario ingresa datos incorrectos (ej: l
 Evitar que se vendan entradas si no hay asientos disponibles.*/
 
 import java.util.Scanner;
+import java.time.LocalTime;
 
 public class cine {
 
@@ -50,18 +51,6 @@ public class cine {
         System.out.println("la hora es: " + java.time.LocalTime.now());
         System.out.println("la fecha es: " + java.time.LocalDate.now());
 
-        // mostrar sala
-        for (int i = 0; i < salas.length; i++) {
-            System.out.println("sala" + (i + 1) + ":");
-            for (int j = 0; j < salas[i].length; j++) {
-                for (int k = 0; k < salas[i][j].length; k++) {
-                    System.out.print(salas[i][j][k] + "");
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
-
         do {
 
             // menu
@@ -75,7 +64,7 @@ public class cine {
 
             switch (opcion) {
                 case 1:
-
+                    cartelera(peliculas, precios);
                     break;
             }
 
@@ -90,10 +79,16 @@ public class cine {
             }
         }
 
-        // consultar cartelera
-
         // comprar entradas
         // consultar precios
 
+    }
+
+    // consultar cartelera
+    public static void cartelera(String[] peliculas, double[] precios) {
+        System.out.println(" Cartelera:");
+        for (int i = 0; i < peliculas.length; i++) {
+            System.out.println((i + 1) + ". " + peliculas[i] + " - Sala " + (i + 1) + " - Precio: $" + precios[i]);
+        }
     }
 }
