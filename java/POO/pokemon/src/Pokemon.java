@@ -5,10 +5,6 @@ public abstract class Pokemon {
     protected int salud;
     protected String tipo;
 
-    public Pokemon() {
-
-    }
-
     public Pokemon(String nombre, int nivel, int salud, String tipo) {
         this.nombre = nombre;
         this.nivel = nivel;
